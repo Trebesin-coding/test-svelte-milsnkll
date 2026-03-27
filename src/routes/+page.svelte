@@ -1,16 +1,43 @@
 <script>
-// Až vytvoříš komponent, nezapomeň jej importovat
-// Emoji se vytváří pomocí windows + . nebo je můžeš zkopírovat odsud 🙂 😢
+
+import Headling from "$lib/Headling.svelte";
+
+    let text = $state("❤️")
+    let pressed = true
+   
+
+    function changeText(){
+        if (pressed = true) {
+            text = "💔"
+            pressed = false
+        } 
+        if (pressed = false) {
+            text = "❤️"
+            pressed = true
+        }
+    }
+
+    let pocet = $state(0)
+    function pocitadlo(){
+        pocet +=1
+    }
+
+
+ 
+
 </script>
 
 <div class="headings">
-    <!-- Sem patří komponenty s nadpisy -->
+    <Headling zprava = "Svelte"/>
+    <Headling zprava = "je"/>
+    <Headling zprava = "brnkačka"/>
 </div>
 
 <div class="container">
-    <p>Zde se bude zobrazovat počet kliknutí</p> 
+    <p>{pocet}</p> 
     <div class="buttons">
-        <!-- Sem patří tlačítka -->
+        <button onclick={pocitadlo}>click for bigger score</button>
+        <button onclick={changeText}>{text}</button>
     </div>
 </div>
 
@@ -20,10 +47,7 @@
 
 
 
-
 <style>
-
-    /* CSS není potřeba upravovat */
 
 * {
     font-family: monospace;
@@ -55,7 +79,7 @@
 }
 
 .buttons > button:nth-of-type(2) {
-    background-color: lightcoral;
+    background-color: rgb(228, 191, 191);
 }
 
 .headings {
