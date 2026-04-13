@@ -31,4 +31,8 @@ CSS není potřeba upravovat
 
 Nápověda pro syntax props: `let { ukazka } = $props()`
 
-### Počet bodu: ?/100
+### Počet bodu: 70/100
+
+- component má být ve složce component
+- podmínku pro zobrazení je potřeba dát do +page.svelte
+- pressed není runa!
